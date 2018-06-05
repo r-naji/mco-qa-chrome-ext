@@ -1,0 +1,31 @@
+
+
+<ul class="nav nav-pills nav-fill">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Utility</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Jira</a>
+  </li>
+</ul>
+
+
+<p>Create files including</p>
+
+
+
+<input type="checkbox" [checked]="isScreenshotChecked" (change)="isScreenshotChecked = !isScreenshotChecked"/>Screenshot current tab
+
+<input type="checkbox" [checked]="isLogChecked" (change)="isLogChecked = !isLogChecked"/>HTTP client log
+
+<br/>
+
+<button class="btn btn-primary btn-sm" [disabled]="!isScreenshotChecked && !isLogChecked" (click)="submit()">Submit</button>
+
+<br/>
+
+<img *ngIf="imageUrl && !hideScreenshot" width="75" [src]="imageUrl">
+
+<pre *ngIf="httpLogs && !hideLogs">
+{{ httpLogs | json}}
+</pre>

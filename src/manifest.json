@@ -1,0 +1,27 @@
+{
+    "name": "MCO QA Chrome Extension",
+    "version": "1.0",
+    "description": "Capture client http log",
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "manifest_version": 2,
+    "permissions": ["activeTab", "webRequest", "<all_urls>"],
+    "background": {
+      "page": "index.html#/background",
+      "persistent": true
+    },
+    "browser_action": {
+      "default_title": "Open Popup!",
+      "default_popup": "index.html#/popup",
+      "default_icon": {
+        "16": "assets/mco_icon.png",
+        "32": "assets/mco_icon.png"
+      }
+    },
+    "icons": {
+        "16": "assets/mco_icon.png",
+        "32": "assets/mco_icon.png",
+        "48": "assets/mco_icon.png",
+        "128": "assets/mco_icon.png"
+    }
+  }
+
