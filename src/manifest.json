@@ -4,7 +4,7 @@
     "description": "Capture client http log",
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
     "manifest_version": 2,
-    "permissions": ["activeTab", "webRequest", "<all_urls>"],
+    "permissions": ["activeTab", "downloads", "webRequest", "<all_urls>"],
     "background": {
       "page": "index.html#/background",
       "persistent": true

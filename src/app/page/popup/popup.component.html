@@ -1,8 +1,8 @@
 
 
-<ul class="nav nav-pills nav-fill">
+<ul class="nav nav-pills nav-fill mb-4">
   <li class="nav-item">
-    <a class="nav-link active" href="#">Utility</a>
+    <a class="nav-link active" href="#">Screenshot/logs</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Jira</a>
@@ -10,19 +10,33 @@
 </ul>
 
 
-<p>Create files including</p>
 
 
 
-<input type="checkbox" [checked]="isScreenshotChecked" (change)="isScreenshotChecked = !isScreenshotChecked"/>Screenshot current tab
+<div class="row">
+  <div class="col-12">
+  <h4 class="mb-4">Create files including</h4>
+</div>
+</div>
 
-<input type="checkbox" [checked]="isLogChecked" (change)="isLogChecked = !isLogChecked"/>HTTP client log
+<div class="row">
+  <div class="col-12">
+  <form>
+      <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="screenshotCheckbox" [checked]="isScreenshotChecked" (change)="isScreenshotChecked = !isScreenshotChecked"/>
+          <label class="form-check-label" for="screenshotCheckbox">Screenshot current tab</label>
+      </div>
 
-<br/>
 
-<button class="btn btn-primary btn-sm" [disabled]="!isScreenshotChecked && !isLogChecked" (click)="submit()">Submit</button>
+      <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="logCheckbox" [checked]="isLogChecked" (change)="isLogChecked = !isLogChecked"/>
+          <label class="form-check-label" for="logCheckbox">HTTP client log</label>
+      </div>
 
-<br/>
+      <button class="btn btn-primary btn-sm" [disabled]="!isScreenshotChecked && !isLogChecked" (click)="downloadFile()">Submit</button>
+  </form>
+</div>
+</div>
 
 <img *ngIf="imageUrl && !hideScreenshot" width="75" [src]="imageUrl">
 

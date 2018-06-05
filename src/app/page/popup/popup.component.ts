@@ -37,21 +37,23 @@ export class PopupComponent implements OnInit {
     });
   }
 
-  public submit() {
+  public downloadFile() {
     if(this.isLogChecked) {
-      this.getHttpLogs();
-      this.hideLogs = false;
+
+      chrome.runtime.sendMessage({type: "HTTP_LOG_REQUEST"}, (response) => {
+        let blob = new Blob([JSON.stringify(response)], {type: "text/plain"});
+        let url = URL.createObjectURL(blob);
+        chrome.downloads.download({url:url});
+      });
     }
-    else {
-      this.hideLogs = true;
-    }
+    this.hideLogs = !this.isLogChecked;
 
     if(this.isScreenshotChecked) {
-      this.captureTabScreenshot();
-      this.hideScreenshot = false;
+      
+      this.chromeService.captureVisibleTab().then((imgUrl)=> {
+        chrome.downloads.download({url:imgUrl});
+      });  
     }
-    else {
-      this.hideScreenshot = true;
-    }
+    this.hideScreenshot = !this.isScreenshotChecked;
   }
 }
