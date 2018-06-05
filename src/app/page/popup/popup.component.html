@@ -1,42 +1,26 @@
-
-
-<ul class="nav nav-pills nav-fill mb-4">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Screenshot/logs</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Jira</a>
-  </li>
-</ul>
-
-
-
-
-
-<div class="row">
+<div class="row mb-4">
   <div class="col-12">
-  <h4 class="mb-4">Create files including</h4>
-</div>
+    <h4>Create files including</h4>
+  </div>
 </div>
 
-<div class="row">
+<div class="row mb-4">
   <div class="col-12">
-  <form>
-      <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="screenshotCheckbox" [checked]="isScreenshotChecked" (change)="isScreenshotChecked = !isScreenshotChecked"/>
-          <label class="form-check-label" for="screenshotCheckbox">Screenshot current tab</label>
-      </div>
+    <form>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="screenshotCheckbox" [checked]="isScreenshotChecked" (change)="isScreenshotChecked = !isScreenshotChecked"/>
+            <label class="form-check-label" for="screenshotCheckbox">Screenshot current tab</label>
+        </div>
 
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="logCheckbox" [checked]="isLogChecked" (change)="isLogChecked = !isLogChecked"/>
+            <label class="form-check-label" for="logCheckbox">HTTP client log</label>
+        </div>
 
-      <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="logCheckbox" [checked]="isLogChecked" (change)="isLogChecked = !isLogChecked"/>
-          <label class="form-check-label" for="logCheckbox">HTTP client log</label>
-      </div>
-
-      <button class="btn btn-primary btn-sm" [disabled]="!isScreenshotChecked && !isLogChecked" (click)="downloadFile()">Submit</button>
-  </form>
+    </form>
+  </div>
 </div>
-</div>
+<button class="btn btn-primary btn-sm" [disabled]="!isScreenshotChecked && !isLogChecked" (click)="downloadFile()">Submit</button>
 
 <img *ngIf="imageUrl && !hideScreenshot" width="75" [src]="imageUrl">
 

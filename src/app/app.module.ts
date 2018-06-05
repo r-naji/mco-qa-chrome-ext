@@ -9,10 +9,12 @@ import { PopupComponent } from './page/popup/popup.component';
 import { ChromeService } from './service/chrome/chrome.service';
 import { BackgroundService } from './service/entity/background.service';
 import { PopupService } from './service/entity/popup.service';
+import { JiraIssueComponent } from './page/jira-issue/jira-issue.component';
 
 const routes: Routes = [
   { path: 'background', component: BackgroundComponent },
   { path: 'popup', component: PopupComponent },
+  { path: 'jira-issue', component: JiraIssueComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' }
 ];
 
@@ -20,7 +22,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     BackgroundComponent,
-    PopupComponent
+    PopupComponent,
+    JiraIssueComponent
   ],
   imports: [
     BrowserModule,

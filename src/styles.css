@@ -4,4 +4,7 @@ body {
     height:580px;
 }
 
-button:focus {outline:0;}
+.optional {
+    display: inline;
+    margin-left: 4px;
+}
