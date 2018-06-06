@@ -8,3 +8,7 @@ body {
     display: inline;
     margin-left: 4px;
 }
+
+.nav-item-active {
+    border-bottom: 2px;
+}

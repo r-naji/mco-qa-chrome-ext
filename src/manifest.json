@@ -10,8 +10,8 @@
       "persistent": true
     },
     "browser_action": {
-      "default_title": "Open Popup!",
-      "default_popup": "index.html#/popup",
+      "default_title": "MCO QA",
+      "default_popup": "index.html#/jira-issue",
       "default_icon": {
         "16": "assets/mco_icon.png",
         "32": "assets/mco_icon.png"
