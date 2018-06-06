@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JiraIssueComponent implements OnInit {
 
+  private isScreenshotChecked:boolean=true;
+  private isLogChecked:boolean=true;
+
   constructor() { }
 
   ngOnInit() {

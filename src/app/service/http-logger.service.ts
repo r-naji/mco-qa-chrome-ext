@@ -74,58 +74,5 @@ export class HttpLoggerService {
       console.log("unregistering webhandler for tab " + tab);
       this.logStorage[tab] = null;
     });
-
-    // chrome.webRequest.onBeforeRequest.addListener(
-    //   (details) => {
-    //     const { tabId, requestId } = details;
-    //     if (this.logStorage[tabId]) {
-    //       this.logStorage[tabId].requests[requestId] = {
-    //         requestId: requestId,
-    //         url: details.url,
-    //         startTime: details.timeStamp,
-    //         status: 'pending',
-    //         method: details.method,
-    //         parameters : details.requestBody
-    //       };
-    //       console.log(this.logStorage[tabId].requests[requestId]);
-    //     }
-    //   }, this.networkFilters);
-
-     // chrome.webRequest.onCompleted.addListener((details) => {
-    //     const { tabId, requestId } = details;
-    //     if (this.logStorage[tabId] && this.logStorage[tabId].requests[requestId]) {
-    //       let request = this.logStorage[tabId].requests[requestId];
-    //       this.logStorage[tabId].requests[requestId] = {...request, statusCode: details.statusCode, endTime: details.timeStamp, requestDuration: details.timeStamp - request.startTime, status: 'complete'};
-
-    //       console.log(this.logStorage[tabId].requests[requestId]);
-    //     }
-    // }, this.networkFilters);
-
-    // chrome.webRequest.onErrorOccurred.addListener((details)=> {
-    //     const { tabId, requestId } = details;
-    //     if (this.logStorage[tabId] && this.logStorage[tabId].requests[requestId]) {
-    //       let request = this.logStorage[tabId].requests[requestId];
-    //       this.logStorage[tabId].requests[requestId] = {...request, statusCode: details.statusCode, endTime: details.timeStamp, status: 'error'};
-
-    //       console.log(this.logStorage[tabId].requests[requestId]);
-    //     }
-    // }, this.networkFilters);
-
-    // chrome.tabs.onActivated.addListener((tab) => {
-    //   console.log("registering webhandler for tab " + tab.tabId);
-    //     const tabId = tab ? tab.tabId : chrome.tabs.TAB_ID_NONE;
-    //     if (!this.logStorage.hasOwnProperty(tabId)) {
-    //       this.logStorage[tabId] = {
-    //         id: tabId,
-    //         requests: {},
-    //         registerTime: new Date().getTime()
-    //       };
-    //     }
-    // });
-
-    // chrome.tabs.onRemoved.addListener((tab) => {
-    //   console.log("unregistering webhandler for tab " + tab);
-    //   this.logStorage[tab] = null;
-    // });
   }
 }
