@@ -1,20 +1,19 @@
-<nav class="navbar navbar-light mb-4" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
   
   <a class="navbar-brand">
     <img class="d-inline-block align-top"  width="30" height="30" alt="MCO Logo" src="assets/mco_icon.png">
     My Compliance Office
   </a>
 </nav>
+<ul class="nav mb-4">
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/jira-issue" routerLinkActive="nav-item-active">Jira issue</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/popup" routerLinkActive="nav-item-active">Files</a>
+  </li>
+</ul>
 
 <div class="container">
-  <ul class="nav mb-4">
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/jira-issue" routerLinkActive="nav-item-active">Jira issue</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/popup" routerLinkActive="nav-item-active">Files</a>
-    </li>
-  </ul>
-
   <router-outlet></router-outlet>
 </div>
