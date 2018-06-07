@@ -2,6 +2,10 @@
 body {
     width:450px;
     height:580px;
+
+    /* Workaround to fix additional right margin created by browser when scrollbar is visible on certain page. 
+    Webkit only property ? Not sure if its cross browser, have to investigate */
+    overflow: overlay;
 }
 
 .optional {
